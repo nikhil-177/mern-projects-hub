@@ -1,2 +1,49 @@
-node_modules
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+
+# Environment variables
 .env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+log.txt
+
+# IDE-specific
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Optional: Ignore uploads if storing locally
+uploads/
+
+# Optional: Coverage reports from tests
+coverage/
+
+# Optional: React-specific cache
+.cache/
+
+# Optional: Mac system file
+*.DS_Store
+
+# Optional: Next.js/Vite
+.next/
+out/
