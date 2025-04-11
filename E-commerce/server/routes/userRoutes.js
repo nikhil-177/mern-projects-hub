@@ -1,15 +1,13 @@
 import express from 'express';
-import { User } from '../models/userModel.js';
+import { signupValidator } from '../middlewares/validators/userValidator.js';
+import { signupController } from '../controllers/auth.controller.js';
+import { ValidationResult } from '../middlewares/validateResult.js';
 
 const router = express.Router()
 
-router.post('/',async (req,res) => {
-    const {name,email,password,address,city,state,country,zipcode,phone} = req.body
-    if(!name || !email || !password || !address || !city || !state || !country || !zipcode || !phone){
-        res.status(400).json({message:"All fields required"})
-    }
-    console.log(req.body);
-})
+router.post('/auth/signup', signupValidator, ValidationResult , signupController);
+
+// router.post('/auth/login', )
 
 
 export const userRoutes = router

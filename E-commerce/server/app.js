@@ -1,13 +1,13 @@
 import 'dotenv/config'
 import express from 'express';
-import { db } from './config/db.js';
+import { connectdb } from './config/db.js';
 import { userRoutes } from './routes/userRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000
 
 //database 
-db()
+connectdb()
 
 // middlewares
 app.use(express.json())
@@ -19,7 +19,7 @@ app.get('/',(req,res) => {
 
 
 // userRoutes
-app.use('/api/user',userRoutes)
+app.use('/api/v1',userRoutes)
 
 
 
